@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Swiper",
+    "version": "0.1",
+    "browser_action": {
+        "default_icon": "cc-icon.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "web_accessible_resources": ["emulate-card-swipe.js"],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    }
+}
